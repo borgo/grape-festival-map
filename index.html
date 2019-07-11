@@ -1,40 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grape map</title>    
-    <script type="text/javascript" src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.7/webcomponents-loader.js"></script>
-    <script type="module" src="https://www.vectary.com/embed/viewer/v1/scripts/vctr-viewer.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grape map</title>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.7/webcomponents-loader.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.vectary.com/embed/viewer/v1/scripts/vctr-viewer.js"
+    ></script>
     <script type="module" src="scripts/index.js"></script>
-    <link rel="stylesheet" href="styles/main.css">
-</head>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
 
-<body>
+  <body>
     <div id="app">
-
-        <div id="viewer">
-            <vctr-viewer id="dowina" 
-                model="5e997231-1308-4999-8e03-4a99e97c4efe" 
-                showPreloader=0
-                gestureHandling="superior" 
-                showGesturePrompts=0 
-                zoom=1 
-                rotateY=1 
-                pan=0 
-                canvasHeight=100pct 
-                canvasHeight=100pct
-                enableApi=1 
-            >
-            </vctr-viewer>
-        </div>
-
-        <div id="menu">
-
-        </div>
-
+      <div id="viewer">
+        <vctr-viewer
+          id="g19"
+          model="7cae928e-9d4b-419f-8daf-4e69898d5875"
+          showPreloader="0"
+          gestureHandling="superior"
+          showGesturePrompts="0"
+          zoom="1"
+          rotateY="1"
+          canvasHeight="100pct"
+          canvasHeight="100pct"
+          enableApi="1"
+        >
+        </vctr-viewer>
+      </div>
+      <div id="menu">
+        <ul>
+          <li>Gastro</li>
+          <li>Main Stage</li>
+        </ul>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>

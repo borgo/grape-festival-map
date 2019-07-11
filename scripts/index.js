@@ -288,7 +288,7 @@ async function run() {
     console.log("Example API running..");
 
     try {
-        api = new VctrApi("dowina", globalErrHandler);
+        api = new VctrApi("g19", globalErrHandler);
         paging = new Paging();
 
         await api.init();
