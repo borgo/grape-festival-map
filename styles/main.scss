@@ -1,4 +1,4 @@
-/* Media queries */
+// Media queries
 @mixin for-phone-only {
   @media (max-width: 599px) { @content; }
 }
@@ -15,18 +15,7 @@
   @media (min-width: 1800px) { @content; }
 }
 
-
-/* Fading animation */
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}      
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* Mixins */
+// Mixins
 @mixin clearfix {
   &:after {
     content: "";
@@ -35,18 +24,8 @@
   }
 }
 
-
-
-
 $gray: #343a40;
 $pink: #fc3f5d;
-
-
-* {
-  box-sizing: borderbox;
-  margin: 0;
-  padding: 0;
-}
 
 html, body {
   margin:0;
@@ -61,14 +40,14 @@ body {
 }
 
 a {
-  color:$gray;
-  text-decoration: none;
+  color:$gray;  
 }
 
 
 
 #app {
   min-width: 320px;
+  min-height: 600px;
   height: 100%;
   width:100%;  
   position: relative;
@@ -80,9 +59,6 @@ a {
     padding:20px;      
     background:white;
     z-index: 1000;
-    // &.is-active {
-    //   left:0;
-    // }
   }
 
   #viewer {
@@ -94,16 +70,12 @@ a {
   #menu {
     display:none;
     margin: 15px;
-    // @include for-tablet-portrait-up {
-    //   display:block;
-    // }
     &.open {
       display:block !important;
     }
     &.closed {
       display:none !important;
     }
-
 
     background-color: rgba(255, 255, 255, 0.75);
     position: absolute;
@@ -112,46 +84,42 @@ a {
     height:80%;
     max-width:400px;
     max-height: 800px;
-    overflow: scroll;
-    // background-image: url("../files/G19_logo.jpg");
-    // background-size: contain;
-    // background-repeat: no-repeat;
-    // background-position: 50% 0;    
+    overflow: scroll;    
     
     ul {
       margin:0;
       padding: 100px 30px 30px 30px;
+      
       @include for-tablet-portrait-up {
         padding: 100px 30px 30px 30px;
       }
+
       @include clearfix;
+
       li {
-        list-style:none;
-        //text-align: center;
-        padding: 0 0 10px 0;
-        
+        list-style:none;        
+        padding: 0 0 10px 0;        
         margin-bottom: 10px;
         float:left;
         width:50%;
       }
+
       &.icons {
         padding: 30px 10px 10px 10px;
+
         li {
           padding: 50px 0 10px 0;
           text-align: center;
           width:33%;
         }
+
       }
-      
-      
+          
     }
 
-    
   }
+
 }
 
-
-
-
-//https://github.com/jonsuh/hamburgers#sass
+// Hamburger menu https://github.com/jonsuh/hamburgers#sass
 @import "./_sass/hamburgers/hamburgers";
