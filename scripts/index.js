@@ -38,7 +38,13 @@ toggleElement.onclick = function() {
 var items = document.querySelectorAll("#menu > ul.items > li > a");
 var highlightObjects = function() {
     var attribute = this.getAttribute("data-filter");
-    alert(attribute);
+    //alert(attribute);
+    vctrApi.highlightMeshByName(attribute, "#ffe81c", 0.2);
+
+    //close menu
+    toggleElement.classList.toggle('is-active')
+    menuElement.classList.remove('open');
+    menuElement.classList.add('closed');  
 };
 
 for (var i = 0; i < items.length; i++) {  
