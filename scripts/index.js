@@ -77,19 +77,19 @@ async function run() {
           console.log(await vctrApi.getObjects());
           vctrApi.addAnnotation({                
               name: "Grape Stage",                
-              objectName: "grape_stage"
+              objectName: "grape_main_stage"
           });
           vctrApi.addAnnotation({
               name: "Orange stage",                
               objectName: "orange_stage"
           });
           vctrApi.addAnnotation({
-            name: "Úschovňa",                
-            objectName: "uschovna"
+            name: "Tržnica",                
+            objectName: "trznica#10"
           });
           vctrApi.addAnnotation({
-            name: "FM stage",
-            objectName: "fm_stage"
+            name: "365 stage",
+            objectName: "365_stage"
           });
           vctrApi.addAnnotation({
             name: "Suzuki stage",
@@ -97,11 +97,11 @@ async function run() {
           });
           vctrApi.addAnnotation({
             name: "Hlavný vstup",
-            objectName: "main_gate"
+            objectName: "main_entry"
           });
           vctrApi.addAnnotation({
             name: "Vstup stanové mesto",
-            objectName: "tent_gate"
+            objectName: "entry_tent_city"
           });
 
           await vctrApi.enableAnnotations(true);
