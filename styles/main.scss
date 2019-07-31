@@ -24,8 +24,14 @@
   }
 }
 
+@font-face {font-family: 'Adieu-Black';src: url('https://www.grapefestival.sk/fonts/Adieu-Black.eot');src: url('https://www.grapefestival.sk/fonts/Adieu-Black.eot?#iefix') format('embedded-opentype'),url('https://www.grapefestival.sk/fonts/Adieu-Black.woff2') format('woff2'),url('https://www.grapefestival.sk/fonts/Adieu-Black.woff') format('woff');}
+@font-face {font-family: 'NeurialGrotesk-Regular';src: url('https://www.grapefestival.sk/fonts/37CB68_0_0.eot');src: url('https://www.grapefestival.sk/fonts/37CB68_0_0.eot?#iefix') format('embedded-opentype'),url('https://www.grapefestival.sk/fonts/37CB68_0_0.woff2') format('woff2'),url('https://www.grapefestival.sk/fonts/37CB68_0_0.woff') format('woff'),url('https://www.grapefestival.sk/fonts/37CB68_0_0.ttf') format('truetype');}
+
+
+
 $gray: #343a40;
 $pink: #fc3f5d;
+$white: #FFFFFF;
 
 html, body {
   margin:0;
@@ -33,17 +39,27 @@ html, body {
   height: 100%;
 }
 
-body {
-  font-family: sans-serif;
-  color: $gray;
-  background-color: $pink; 
+body {  
+  color: $pink;
+  font-family: "NeurialGrotesk-Regular", Helvetica, Arial;  
+	font-size: 16px;
 }
 
 a {
-  color:$gray;  
+  color:$pink;  
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Adieu-Black", Helvetica, Arial;  
+}
 
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 16px;
+}
 
 #app {
   min-width: 320px;
@@ -54,22 +70,31 @@ a {
   
   #menu-toggle {
     position:fixed;
-    right:15px;
-    bottom:15px;
-    padding:20px;      
-    background:white;
+    right:0;
+    top:30px;
+    padding:0px;
     z-index: 1000;
+    &:focus {
+      outline: 0;
+    }
   }
 
   #viewer {
     position: absolute;
     width:100%;
-    height:100%;        
+    height:100%;  
+    
+    .watermark {
+      position:absolute;
+      left:20px;
+      bottom:20px;
+      z-index: 1000;
+    }
   }
   
   #menu {
     display:none;
-    margin: 15px;
+    //margin: 15px;
     &.open {
       display:block !important;
     }
@@ -137,3 +162,12 @@ a {
 
 // Hamburger menu https://github.com/jonsuh/hamburgers#sass
 @import "./_sass/hamburgers/hamburgers";
+
+.hamburger-inner, 
+.hamburger-inner::before, 
+.hamburger-inner::after, 
+.hamburger.is-active .hamburger-inner, 
+.hamburger.is-active .hamburger-inner::before, 
+.hamburger.is-active .hamburger-inner::after {
+  background-color: $pink;
+}

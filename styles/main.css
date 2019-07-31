@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Adieu-Black';
+  src: url("https://www.grapefestival.sk/fonts/Adieu-Black.eot");
+  src: url("https://www.grapefestival.sk/fonts/Adieu-Black.eot?#iefix") format("embedded-opentype"), url("https://www.grapefestival.sk/fonts/Adieu-Black.woff2") format("woff2"), url("https://www.grapefestival.sk/fonts/Adieu-Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'NeurialGrotesk-Regular';
+  src: url("https://www.grapefestival.sk/fonts/37CB68_0_0.eot");
+  src: url("https://www.grapefestival.sk/fonts/37CB68_0_0.eot?#iefix") format("embedded-opentype"), url("https://www.grapefestival.sk/fonts/37CB68_0_0.woff2") format("woff2"), url("https://www.grapefestival.sk/fonts/37CB68_0_0.woff") format("woff"), url("https://www.grapefestival.sk/fonts/37CB68_0_0.ttf") format("truetype");
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -5,13 +17,25 @@ html, body {
 }
 
 body {
-  font-family: sans-serif;
-  color: #343a40;
-  background-color: #fc3f5d;
+  color: #fc3f5d;
+  font-family: "NeurialGrotesk-Regular", Helvetica, Arial;
+  font-size: 16px;
 }
 
 a {
-  color: #343a40;
+  color: #fc3f5d;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Adieu-Black", Helvetica, Arial;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 16px;
 }
 
 #app {
@@ -24,11 +48,14 @@ a {
 
 #app #menu-toggle {
   position: fixed;
-  right: 15px;
-  bottom: 15px;
-  padding: 20px;
-  background: white;
+  right: 0;
+  top: 30px;
+  padding: 0px;
   z-index: 1000;
+}
+
+#app #menu-toggle:focus {
+  outline: 0;
 }
 
 #app #viewer {
@@ -37,9 +64,15 @@ a {
   height: 100%;
 }
 
+#app #viewer .watermark {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
 #app #menu {
   display: none;
-  margin: 15px;
   background-color: rgba(255, 255, 255, 0.75);
   position: absolute;
   z-index: 2;
@@ -241,5 +274,14 @@ a {
   transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after,
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #fc3f5d;
 }
 /*# sourceMappingURL=main.css.map */
