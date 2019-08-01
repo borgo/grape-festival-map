@@ -201,12 +201,18 @@ h3 {
 
 // Hamburger menu https://github.com/jonsuh/hamburgers#sass
 @import "./_sass/hamburgers/hamburgers";
+.hamburger-box {
+  width: 30px;
+}
+.hamburger-inner, 
+.hamburger-inner::before, 
+.hamburger-inner::after {
+  width:30px;
+  background-color: #4f4f4f;
+}
 
-// .hamburger-inner, 
-// .hamburger-inner::before, 
-// .hamburger-inner::after, 
-// .hamburger.is-active .hamburger-inner, 
-// .hamburger.is-active .hamburger-inner::before, 
-// .hamburger.is-active .hamburger-inner::after {
-//   background-color: $pink;
-// }
+.hamburger.is-active .hamburger-inner, 
+.hamburger.is-active .hamburger-inner::before, 
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #ffffff;
+}
