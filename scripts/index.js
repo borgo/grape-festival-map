@@ -39,7 +39,7 @@ var items = document.querySelectorAll("#menu > ul.items > li > a");
 var highlightObjects = function() {
     var attribute = this.getAttribute("data-filter");
     //alert(attribute);
-    vctrApi.highlightMeshByName(attribute, "#ffe81c", 0.2);
+    vctrApi.highlightMeshByName(attribute, "#ffe81c", 0.2, true);
 
     //close menu
     toggleElement.classList.toggle('is-active')
@@ -86,6 +86,10 @@ async function run() {
           vctrApi.addAnnotation({
             name: "Tržnica",                
             objectName: "trznica#10"
+          });
+          vctrApi.addAnnotation({
+            name: "Jameson",                
+            objectName: "containers"
           });
           vctrApi.addAnnotation({
             name: "365 stage",
