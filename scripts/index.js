@@ -37,9 +37,11 @@ toggleElement.onclick = function() {
 //Highlighting
 var items = document.querySelectorAll("#menu > ul.items > li > a");
 var highlightObjects = function() {
-    var attribute = this.getAttribute("data-filter");
+    var mesh = this.getAttribute("data-mesh");
+    var camera = this.getAttribute("data-camera");
     //alert(attribute);
-    vctrApi.highlightMeshByName(attribute, "#ffe81c", 0.2, true);
+    vctrApi.setCamera(camera);
+    vctrApi.highlightMeshByName(mesh, "#ffe81c", 0.2, true);
 
     //close menu
     toggleElement.classList.toggle('is-active')

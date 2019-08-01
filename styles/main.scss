@@ -70,10 +70,10 @@ h3 {
   
   #menu-toggle {
     position:fixed;
-    right:0;
-    top:30px;
+    right:8px;
+    bottom:10px;
     padding:0px;
-    z-index: 1000;
+    z-index: 4;
     &:focus {
       outline: 0;
     }
@@ -88,7 +88,7 @@ h3 {
       position:absolute;
       left:20px;
       bottom:20px;
-      z-index: 1000;
+      z-index: 2;
     }
   }
   
@@ -102,41 +102,43 @@ h3 {
       display:none !important;
     }
 
-    background-color: rgba(255, 255, 255, 0.75);
+    //background-color: rgba(255, 255, 255, 1);
+    background-color: $pink;
     position: absolute;
-    z-index:2;
+    z-index:3;
     right:0;
+    //top:100px;
     width:90%;
-    height:80%;
-    max-width:400px;
-    max-height: 800px;
+    height: 100%;
+    max-width:400px;    
+    //max-height: 1200px;
     overflow: scroll;    
-    .inner {
-      padding: 30px;
-    }
     ul {
       margin:0;
-      padding: 50px 30px 30px 30px;
+      padding: 20px;
       
-      @include for-tablet-portrait-up {
-        padding: 50px 30px 30px 30px;
-      }
+      // @include for-tablet-portrait-up {
+      //   padding: 20px;
+      // }
 
       @include clearfix;
 
       li {
         list-style:none;        
         padding: 0 0 10px 0;        
-        margin-bottom: 10px;
+        margin-bottom: 0;
         float:left;
         width:50%;
+        a {
+          color: $white;
+        }
       }
 
       &.icons {
-        padding: 30px 10px 10px 10px;
+        //padding: 30px 10px 10px 10px;
 
         li {          
-          padding: 50px 0 10px 0;
+          padding: 0 0 10px 0;
           text-align: center;
           width:33%;
           .icon {
@@ -200,11 +202,11 @@ h3 {
 // Hamburger menu https://github.com/jonsuh/hamburgers#sass
 @import "./_sass/hamburgers/hamburgers";
 
-.hamburger-inner, 
-.hamburger-inner::before, 
-.hamburger-inner::after, 
-.hamburger.is-active .hamburger-inner, 
-.hamburger.is-active .hamburger-inner::before, 
-.hamburger.is-active .hamburger-inner::after {
-  background-color: $pink;
-}
+// .hamburger-inner, 
+// .hamburger-inner::before, 
+// .hamburger-inner::after, 
+// .hamburger.is-active .hamburger-inner, 
+// .hamburger.is-active .hamburger-inner::before, 
+// .hamburger.is-active .hamburger-inner::after {
+//   background-color: $pink;
+// }
