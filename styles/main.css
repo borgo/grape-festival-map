@@ -132,16 +132,9 @@ h3 {
 }
 
 #app #menu ul.icons li .icon {
-  background-image: url("../files/icon.svg");
-  background-repeat: no-repeat;
-  background-position: 50% 0;
   display: block;
   width: 100%;
-  height: 40px;
-}
-
-#app #menu ul.icons li .icon.redbull {
-  background-image: url("../files/redbull.svg");
+  height: 80px;
 }
 
 /*!

@@ -140,15 +140,52 @@ h3 {
           text-align: center;
           width:33%;
           .icon {
-            background-image: url("../files/icon.svg");
-            background-repeat: no-repeat;
-            background-position: 50% 0;
+            //background-image: url("../files/icon.svg");
+            //background-repeat: no-repeat;
+            //background-position: 50% 0;
             display: block;
             width: 100%;
-            height:40px;
-            &.redbull {
-              background-image: url("../files/redbull.svg");
+            height:80px;
+            &.nabijackaren {
+              //background-image: url("../files/nabijackaren.svg");
             }
+            &.cigarety {
+              //background-image: url("../files/cigarety.svg");
+            }
+            &.kava {
+              //background-image: url("../files/kava.svg");
+            }
+            &.redbull {
+              //background-image: url("../files/redbull.svg");
+            }
+            &.bankomat {
+              //background-image: url("../files/bankomat.svg");
+            }
+            &.vinaren {
+              //background-image: url("../files/vinaren.svg");
+            }
+            &.vino {
+              //background-image: url("../files/vino.svg");
+            }
+            &.pivo {
+              //background-image: url("../files/pivo.svg");
+            }
+            &.bar {
+              //background-image: url("../files/bar.svg");
+            }
+            &.keramickewc {
+              //background-image: url("../files/keramickewc.svg");
+            }
+            &.sprcha {
+              //background-image: url("../files/sprcha.svg");
+            }
+            &.wc {
+              //background-image: url("../files/wc.svg");
+            }
+            &.voda {
+              //background-image: url("../files/voda.svg");
+            }
+                        
           }
         }
 
