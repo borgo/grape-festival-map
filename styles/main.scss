@@ -63,7 +63,7 @@ h3 {
 
 #app {
   min-width: 320px;
-  min-height: 600px;
+  //min-height: 600px;
   height: 100%;
   width:100%;  
   position: relative;
@@ -73,7 +73,7 @@ h3 {
     right:8px;
     bottom:10px;
     padding:0px;
-    z-index: 4;
+    z-index: 12;
     &:focus {
       outline: 0;
     }
@@ -86,9 +86,9 @@ h3 {
     
     .watermark {
       position:absolute;
-      left:20px;
-      bottom:20px;
-      z-index: 2;
+      left:7px;
+      bottom:10px;
+      z-index: 10;
     }
   }
   
@@ -105,7 +105,7 @@ h3 {
     //background-color: rgba(255, 255, 255, 1);
     background-color: $pink;
     position: absolute;
-    z-index:3;
+    z-index:10;
     right:0;
     //top:100px;
     width:90%;
