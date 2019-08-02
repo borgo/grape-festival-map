@@ -39,10 +39,7 @@ toggleElement.onclick = function() {
 //Highlighting
 var items = document.querySelectorAll("#menu > ul.items > li > a");
 var highlightObjects = function() {
-    var mesh = this.getAttribute("data-mesh");
-    var camera = this.getAttribute("data-camera");
-    //alert(attribute);
-    vctrApi.setCamera(camera);
+    var mesh = this.getAttribute("data-mesh");    
     vctrApi.highlightMeshByName(mesh, "#ffe81c", 0.2, true);
 
     //close menu
@@ -88,16 +85,40 @@ async function run() {
               objectName: "orange_stage"
           });
           vctrApi.addAnnotation({
+            name: "Orange zóna",
+            objectName: "orange_zona"
+          });
+          vctrApi.addAnnotation({
+            name: "Úschovňa",
+            objectName: "uschovna"
+          });
+          vctrApi.addAnnotation({
             name: "Yeme tržnica",
             objectName: "trznica#10"
+          });
+          vctrApi.addAnnotation({
+            name: "Gastro",
+            objectName: "gastro"
+          });
+          vctrApi.addAnnotation({
+            name: "Očistec stage",
+            objectName: "ocistec_stage"
           });
           vctrApi.addAnnotation({
             name: "Jameson",
             objectName: "jameson"
           });
           vctrApi.addAnnotation({
-            name: "365 stage",
+            name: "365.bank stage",
             objectName: "365_stage"
+          });
+          vctrApi.addAnnotation({
+            name: "365.bank cafe",
+            objectName: "365bank_cafe"
+          });
+          vctrApi.addAnnotation({
+            name: "Mastercard",
+            objectName: "master_card"
           });
           vctrApi.addAnnotation({
             name: "Suzuki stage",
@@ -161,7 +182,7 @@ async function run() {
           });
           vctrApi.addAnnotation({
             name: "Mazagrande",
-            objectName: "masagrande"
+            objectName: "mazagrande"
           });
           vctrApi.addAnnotation({
             name: "SSE zóna",
