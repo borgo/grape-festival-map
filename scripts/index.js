@@ -2,16 +2,11 @@ import { VctrApi } from "https://www.vectary.com/embed/viewer/v1/scripts/api/api
 
 let vctrApi;
 
-const appElement = document.getElementById('app');
 const menuElement = document.getElementById('menu');
 const toggleElement = document.getElementById('menu-toggle');
 
 const annotationsMap = new Map();
 
-
-function globalErrHandler(objects) {
-    console.log("test api failed", objects);
-}
 
 menuElement.classList.add('closed');
 
@@ -25,23 +20,23 @@ menuElement.classList.add('closed');
 // }
 
 //Menu toggling
-toggleElement.onclick = function() {  
-    this.classList.toggle('is-active'); 
-    
+toggleElement.onclick = function () {
+    this.classList.toggle('is-active');
+
     if (menuElement.classList.contains("open")) {
-        menuElement.classList.remove('open'); 
-        menuElement.classList.add('closed'); 
+        menuElement.classList.remove('open');
+        menuElement.classList.add('closed');
     }
     else {
-        menuElement.classList.remove('closed'); 
-        menuElement.classList.add('open'); 
+        menuElement.classList.remove('closed');
+        menuElement.classList.add('open');
     }
 }
 
 //Highlighting
-var items = document.querySelectorAll("#menu > ul.items > li > a");
-var highlightObjects = function() {
-    var mesh = this.getAttribute("data-mesh");    
+const items = document.querySelectorAll("#menu > ul.items > li > a");
+const highlightObjects = function () {
+    const mesh = this.getAttribute("data-mesh");
     vctrApi.highlightMeshByName(mesh, "#ffe81c", 0.2, true);
     if (annotationsMap.has(mesh)) {
         vctrApi.expandAnnotationsById([annotationsMap.get(mesh)], true, true);
@@ -50,11 +45,11 @@ var highlightObjects = function() {
     //close menu
     toggleElement.classList.toggle('is-active')
     menuElement.classList.remove('open');
-    menuElement.classList.add('closed');  
+    menuElement.classList.add('closed');
 };
 
-for (var i = 0; i < items.length; i++) {  
-  items[i].addEventListener('click', highlightObjects, false);
+for (let i = 0; i < items.length; i++) {
+    items[i].addEventListener('click', highlightObjects, false);
 }
 
 // async function fetchData(path) {
@@ -70,174 +65,76 @@ for (var i = 0; i < items.length; i++) {
 // }
 
 async function run() {
-  console.log("Example script running..");
+    console.log("Example script running..");
 
-  function errHandler(err) {
-      console.log("API error", err);
-  }
+    function errHandler(err) {
+        console.log("API error", err);
+    }
 
-  async function onReady() {
-      console.log("API ready..");
+    function addAnnotation(name, objectName) {
+        vctrApi.addAnnotation({
+            name: name,
+            objectName: objectName
+        })
+            .then(annotation => {
+                if (annotation !== null) {
+                    annotationsMap.set(objectName, annotation.id);
+                }
+            });
+    }
 
-      let annotation;
-      try {
-          console.log(await vctrApi.getObjects());
-          annotation = await vctrApi.addAnnotation({
-              name: "Grape Stage",
-              objectName: "grape_stage"
-          });
-          if (annotation) {
-              annotationsMap.set("grape_stage", annotation.id);
-          }
-          annotation = await vctrApi.addAnnotation({
-              name: "Orange stage",
-              objectName: "orange_stage"
-          });
-          if (annotation) {
-            annotationsMap.set("orange_stage", annotation.id);
+    async function onReady() {
+        console.log("API ready..");
+
+        try {
+            console.log(await vctrApi.getObjects());
+            addAnnotation("Grape Stage", "grape_stage");
+            addAnnotation("Orange stage", "orange_stage");
+            addAnnotation("Orange zóna", "orange_zona");
+            addAnnotation("Úschovňa", "uschovna");
+            addAnnotation("Yeme tržnica", "trznica#10");
+            addAnnotation("Gastro", "gastro");
+            addAnnotation("Očistec stage", "ocistec_stage");
+            addAnnotation("Jameson", "jameson");
+            addAnnotation("365.bank stage", "365_stage");
+            addAnnotation("365.bank cafe", "365bank_cafe");
+            addAnnotation("Mastercard", "master_card");
+            addAnnotation("Suzuki stage", "suzuki_stage");
+            addAnnotation("Hlavný vstup", "main_entry");
+            addAnnotation("Vstup stanové mesto", "entry_tent_city");
+            addAnnotation("Chill village", "chill_village");
+            addAnnotation("Tent Inn", "tent_inn");
+            addAnnotation("Camp manager", "camp_manager");
+            addAnnotation("Tent Inn", "tent_inn");
+            addAnnotation("Nay stage", "nay_stage");
+            addAnnotation("Grape pavilon", "grape_pavilon");
+            addAnnotation("U rampa", "u_rampa");
+            addAnnotation("U rampa", "u_rampa");
+            addAnnotation("Stanové mestečko", "tents");
+            addAnnotation("Urban market", "urban_market_1");
+            addAnnotation("Merch", "merch");
+            addAnnotation("Kaufland zóna", "kaufland_zona");
+            addAnnotation("Mazagrande", "mazagrande");
+            addAnnotation("SSE zóna", "sse_zona");
+            addAnnotation("Pilsner Urquell", "pilsner");
+            addAnnotation("Rádio_FM Urban market hangair", "radio_fm_urban_market_hangair");
+
+            await vctrApi.enableAnnotations(true);
+
+        } catch (e) {
+            errHandler(e);
         }
-          annotation = await vctrApi.addAnnotation({
-            name: "Orange zóna",
-            objectName: "orange_zona"
-          });
-          if (annotation) {
-            annotationsMap.set("orange_zone", annotation.id);
-        }
-          annotation = await vctrApi.addAnnotation({
-            name: "Úschovňa",
-            objectName: "uschovna"
-          });
-          if (annotation) {
-            annotationsMap.set("uschovna", annotation.id);
-        }
-          annotation = await vctrApi.addAnnotation({
-            name: "Yeme tržnica",
-            objectName: "trznica#10"
-          });
-          if (annotation) {
-            annotationsMap.set("trznica#10", annotation.id);
-        }
-          annotation = await vctrApi.addAnnotation({
-            name: "Gastro",
-            objectName: "gastro"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Očistec stage",
-            objectName: "ocistec_stage"
-          });
-          if (annotation) {
-            annotationsMap.set("ocistec_stage", annotation.id);
-        }
-          annotation = await vctrApi.addAnnotation({
-            name: "Jameson",
-            objectName: "jameson"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "365.bank stage",
-            objectName: "365_stage"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "365.bank cafe",
-            objectName: "365bank_cafe"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Mastercard",
-            objectName: "master_card"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Suzuki stage",
-            objectName: "suzuki_stage"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Hlavný vstup",
-            objectName: "main_entry"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Vstup stanové mesto",
-            objectName: "entry_tent_city"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Chill village",
-            objectName: "chill_village"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Tent Inn",
-            objectName: "tent_inn"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Camp manager",
-            objectName: "camp_manager"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Tent Inn",
-            objectName: "tent_inn"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Nay stage",
-            objectName: "nay_stage"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Grape pavilon",
-            objectName: "grape_pavilon"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "U rampa",
-            objectName: "u_rampa"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "U rampa",
-            objectName: "u_rampa"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Stanové mestečko",
-            objectName: "tents"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Urban market",
-            objectName: "urban_market_1"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Merch",
-            objectName: "merch"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Kaufland zóna",
-            objectName: "kaufland_zona"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Mazagrande",
-            objectName: "mazagrande"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "SSE zóna",
-            objectName: "sse_zona"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Pilsner Urquell",
-            objectName: "pilsner"
-          });
-          annotation = await vctrApi.addAnnotation({
-            name: "Rádio_FM Urban market hangair",
-            objectName: "radio_fm_urban_market_hangair"
-          });
 
-          await vctrApi.enableAnnotations(true);
+    }
 
-      } catch (e) {
-          errHandler(e);
-      }
+    vctrApi = new VctrApi("g19", errHandler);
+    try {
+        await vctrApi.init();
+        onReady();
 
-  }
-
-  vctrApi = new VctrApi("g19", errHandler);
-  try {
-      await vctrApi.init();        
-      //addEventListeners();
-      onReady();
-      
-  } catch (e) {
-      errHandler(e);
-  }
+    } catch (e) {
+        errHandler(e);
+    }
 }
 
 run();
