@@ -11,14 +11,16 @@ function globalErrHandler(objects) {
     console.log("test api failed", objects);
 }
 
+menuElement.classList.add('closed');
+
 //Menu loading based on width
-if (document.getElementById('app').clientWidth <= 600)  {
-    menuElement.classList.add('closed');
-}
-else {
-    menuElement.classList.add('open');
-    toggleElement.classList.add('is-active');
-}
+// if (document.getElementById('app').clientWidth <= 600)  {
+//     menuElement.classList.add('closed');
+// }
+// else {
+//     menuElement.classList.add('open');
+//     toggleElement.classList.add('is-active');
+// }
 
 //Menu toggling
 toggleElement.onclick = function() {  
@@ -77,21 +79,21 @@ async function run() {
 
       try {
           console.log(await vctrApi.getObjects());
-          vctrApi.addAnnotation({                
-              name: "Grape Stage",                
-              objectName: "grape_main_stage"
+          vctrApi.addAnnotation({
+              name: "Grape Stage",
+              objectName: "grape_stage"
           });
           vctrApi.addAnnotation({
-              name: "Orange stage",                
+              name: "Orange stage",
               objectName: "orange_stage"
           });
           vctrApi.addAnnotation({
-            name: "Tržnica",                
+            name: "Yeme tržnica",
             objectName: "trznica#10"
           });
           vctrApi.addAnnotation({
-            name: "Jameson",                
-            objectName: "containers"
+            name: "Jameson",
+            objectName: "jameson"
           });
           vctrApi.addAnnotation({
             name: "365 stage",
@@ -108,6 +110,70 @@ async function run() {
           vctrApi.addAnnotation({
             name: "Vstup stanové mesto",
             objectName: "entry_tent_city"
+          });
+          vctrApi.addAnnotation({
+            name: "Chill village",
+            objectName: "chill_village"
+          });
+          vctrApi.addAnnotation({
+            name: "Tent Inn",
+            objectName: "tent_inn"
+          });
+          vctrApi.addAnnotation({
+            name: "Camp manager",
+            objectName: "camp_manager"
+          });
+          vctrApi.addAnnotation({
+            name: "Tent Inn",
+            objectName: "tent_inn"
+          });
+          vctrApi.addAnnotation({
+            name: "Nay stage",
+            objectName: "nay_stage"
+          });
+          vctrApi.addAnnotation({
+            name: "Grape pavilon",
+            objectName: "grape_pavilon"
+          });
+          vctrApi.addAnnotation({
+            name: "U rampa",
+            objectName: "u_rampa"
+          });
+          vctrApi.addAnnotation({
+            name: "U rampa",
+            objectName: "u_rampa"
+          });
+          vctrApi.addAnnotation({
+            name: "Stanové mestečko",
+            objectName: "tents"
+          });
+          vctrApi.addAnnotation({
+            name: "Urban market",
+            objectName: "urban_market_1"
+          });
+          vctrApi.addAnnotation({
+            name: "Merch",
+            objectName: "merch"
+          });
+          vctrApi.addAnnotation({
+            name: "Kaufland zóna",
+            objectName: "kaufland_zona"
+          });
+          vctrApi.addAnnotation({
+            name: "Mazagrande",
+            objectName: "masagrande"
+          });
+          vctrApi.addAnnotation({
+            name: "SSE zóna",
+            objectName: "sse_zona"
+          });
+          vctrApi.addAnnotation({
+            name: "Pilsner Urquell",
+            objectName: "pilsner"
+          });
+          vctrApi.addAnnotation({
+            name: "Rádio_FM Urban market hangair",
+            objectName: "radio_fm_urban_market_hangair"
           });
 
           await vctrApi.enableAnnotations(true);
