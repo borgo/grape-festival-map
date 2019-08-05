@@ -89,6 +89,7 @@ h3 {
       left:7px;
       bottom:10px;
       z-index: 10;
+      display: none;
     }
   }
   
@@ -148,44 +149,44 @@ h3 {
             display: block;
             width: 100%;
             height:80px;
-            &.nabijackaren {
-              //background-image: url("../files/nabijackaren.svg");
+            &.nabijackaren img {
+              height:40px;
             }
-            &.cigarety {
-              //background-image: url("../files/cigarety.svg");
+            &.cigarety img {
+              height:55px;
             }
-            &.kava {
-              //background-image: url("../files/kava.svg");
+            &.kava img {
+              height:30px;
             }
-            &.redbull {
-              //background-image: url("../files/redbull.svg");
+            &.redbull img {
+              height:40px;
             }
-            &.bankomat {
-              //background-image: url("../files/bankomat.svg");
+            &.bankomat img {
+              height:30px;
             }
-            &.vinaren {
-              //background-image: url("../files/vinaren.svg");
+            &.vinaren img {
+              height:40px;
             }
-            &.vino {
-              //background-image: url("../files/vino.svg");
+            &.vino img {
+              height:60px;
             }
-            &.pivo {
-              //background-image: url("../files/pivo.svg");
+            &.pivo img {              
+              height:50px;
             }
-            &.bar {
-              //background-image: url("../files/bar.svg");
+            &.bar img {
+              height:40px;
             }
-            &.keramickewc {
-              //background-image: url("../files/keramickewc.svg");
+            &.keramickewc img {
+              height:40px;
             }
-            &.sprcha {
-              //background-image: url("../files/sprcha.svg");
+            &.sprcha img {
+              height:50px;
             }
-            &.wc {
-              //background-image: url("../files/wc.svg");
+            &.wc img {
+              height:30px;
             }
-            &.voda {
-              //background-image: url("../files/voda.svg");
+            &.voda img {
+              height:30px;
             }
                         
           }

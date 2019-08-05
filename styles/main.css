@@ -69,6 +69,7 @@ h3 {
   left: 7px;
   bottom: 10px;
   z-index: 10;
+  display: none;
 }
 
 #app #menu {
@@ -120,6 +121,58 @@ h3 {
   display: block;
   width: 100%;
   height: 80px;
+}
+
+#app #menu ul.icons li .icon.nabijackaren img {
+  height: 40px;
+}
+
+#app #menu ul.icons li .icon.cigarety img {
+  height: 55px;
+}
+
+#app #menu ul.icons li .icon.kava img {
+  height: 30px;
+}
+
+#app #menu ul.icons li .icon.redbull img {
+  height: 40px;
+}
+
+#app #menu ul.icons li .icon.bankomat img {
+  height: 30px;
+}
+
+#app #menu ul.icons li .icon.vinaren img {
+  height: 40px;
+}
+
+#app #menu ul.icons li .icon.vino img {
+  height: 60px;
+}
+
+#app #menu ul.icons li .icon.pivo img {
+  height: 50px;
+}
+
+#app #menu ul.icons li .icon.bar img {
+  height: 40px;
+}
+
+#app #menu ul.icons li .icon.keramickewc img {
+  height: 40px;
+}
+
+#app #menu ul.icons li .icon.sprcha img {
+  height: 50px;
+}
+
+#app #menu ul.icons li .icon.wc img {
+  height: 30px;
+}
+
+#app #menu ul.icons li .icon.voda img {
+  height: 30px;
 }
 
 /*!
