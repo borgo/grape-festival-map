@@ -38,12 +38,15 @@ const items = document.querySelectorAll("#menu > ul.items > li > a");
 
 const highlightObjects = function () {
     
-    let meshes = this.getAttribute("data-highlight");
+    let meshes = this.getAttribute("data-highlight").split(",");
   
     vctrApi.highlightMeshesByName(meshes, "#ffe81c", 0.3, true);
 
-    if (annotationsMap.has(meshes)) {
-      vctrApi.expandAnnotationsById([annotationsMap.get(meshes)], true, true);
+    const annotationsIds = meshes
+        .filter(mesh => annotationsMap.has(mesh))
+        .map(mesh => annotationsMap.get(mesh));
+    if (annotationsIds.length) {
+      vctrApi.expandAnnotationsById(annotationsIds, true, true);
     }
     
     toggleElement.classList.toggle('is-active')
