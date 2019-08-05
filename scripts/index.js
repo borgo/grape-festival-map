@@ -82,47 +82,47 @@ async function run() {
 
         try {
             console.log(await vctrApi.getObjects());
-            addAnnotation("Grape Stage", "grape_stage_1");
-            addAnnotation("Orange stage", "orange_stage");
-            addAnnotation("Orange zóna", "orange_zona");
             addAnnotation("Úschovňa / Straty a nálezy", "uschovna");
+            addAnnotation("Mazagrande", "mazagrande");
+            addAnnotation("Kaufland zóna", "kaufland_zona");
+            addAnnotation("365.Bank cafe", "365bank_cafe");
+            addAnnotation("Camp manager", "camp_manager");
+            addAnnotation("Corny šport", "futbalka_3");
+            addAnnotation("Grape pavilon", "grape_pavilon");
+            addAnnotation("Frisco sunset", "pomaranc_3"); //@TODO
+            addAnnotation("Nivea / Rowenta", "ruz_3");
+            addAnnotation("Birell", "trampolina_3");  //@TODO
+            addAnnotation("Požičovňa", "pozicovna"); //@TODO
+            addAnnotation("Good point", "stolicka_3");
+            addAnnotation("Orange zóna", "orange_zona");
+            addAnnotation("Pilsner Urquell", "pilsner");
+            addAnnotation("SSE zóna", "sse_zona");
             addAnnotation("Tržnica", "trznica#10");
             addAnnotation("Gastro", "gastro");
-            addAnnotation("Očistec stage", "ocistec_stage");
             addAnnotation("Jameson", "jameson");
-            addAnnotation("Gambrinus truck", "gambrinus");
-            addAnnotation("365.Bank stage", "365_stage");
-            addAnnotation("365.Bank cafe", "365bank_cafe");
+            addAnnotation("Gambrinus truck", "gambrinus"); //@TODO
+            addAnnotation("Shop", "merch");
+            addAnnotation("Royal crown zóna", "royal_crown_zona"); //@TODO
             addAnnotation("Mastercard", "master_card");
+            addAnnotation("Avon", "avon"); //@TODO
+            addAnnotation("Urban market", "urban_market_1");
+            addAnnotation("Red bull organics", "redbull_organic_3");
+            addAnnotation("Grape Stage", "grape_stage_1");
+            addAnnotation("Orange stage", "orange_stage");
             addAnnotation("Suzuki stage", "suzuki_stage");
-            addAnnotation("Hlavný vstup", "main_entry");
+            addAnnotation("365.Bank stage", "365_stage");
+            addAnnotation("Nay stage", "nay_stage");
+            addAnnotation("Rádio_FM Urban market hangair", "radio_fm_urban_market_hangair");
+            addAnnotation("Redbull rapstorm stage", "redbull_rapstorm"); //@TODO
+            addAnnotation("Očistec stage", "ocistec_stage");
+            addAnnotation("Hlavný vstup", "main_entry_2");
             addAnnotation("Vstup stanové mesto", "entry_tent_city");
+            addAnnotation("Biela noc \"Perspektíva\"", "biela_noc_perspektiva");            
             addAnnotation("Chill village", "chill_village");
             addAnnotation("Tent Inn", "tent_inn");
-            addAnnotation("Camp manager", "camp_manager");            
-            addAnnotation("Nay stage", "nay_stage");
-            addAnnotation("Grape pavilon", "grape_pavilon");            
-            addAnnotation("Corny šport", "corny_sport");
-            addAnnotation("Frisco sunset", "frisco_sunset");
-            addAnnotation("Nivea / Rowenta", "nivea_rowenta");
-            addAnnotation("Birell", "birell");
-            addAnnotation("Požičovňa", "pozicovna");
-            addAnnotation("Good point", "good_point");
             addAnnotation("U rampa", "u_rampa");            
             addAnnotation("Stanové mestečko", "tents");
-            addAnnotation("Urban market", "urban_market_1");
-            addAnnotation("Shop", "merch");
-            addAnnotation("Royal crown zóna", "royal_crown_zona");
-            addAnnotation("Kaufland zóna", "kaufland_zona");
-            addAnnotation("Mazagrande", "mazagrande");
-            addAnnotation("SSE zóna", "sse_zona");
-            addAnnotation("Pilsner Urquell", "pilsner");
-            addAnnotation("Očistec stage", "ocistec_stage");
-            addAnnotation("Rádio_FM Urban market hangair", "radio_fm_urban_market_hangair");
-            addAnnotation("Biela noc \"Perspektíva\"", "biela_noc_perspektiva");
-            addAnnotation("Avon", "avon");
-            addAnnotation("Red bull organics", "redbull_organics");
-
+            addAnnotation("Prvá pomoc", "doctor_3");
             await vctrApi.enableAnnotations(true);
 
         } catch (e) {
