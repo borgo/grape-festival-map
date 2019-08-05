@@ -99,7 +99,7 @@ async function run() {
             addAnnotation("SSE zóna", "sse_zona");
             addAnnotation("Tržnica", "trznica#10");
             addAnnotation("Gastro", "gastro");
-            addAnnotation("Jameson", "jameson");
+            addAnnotation("Jameson", "jameson_2");
             addAnnotation("Gambrinus truck", "gambrinus"); //@TODO
             addAnnotation("Shop", "merch");
             addAnnotation("Royal crown zóna", "royal_crown_zona"); //@TODO
