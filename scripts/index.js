@@ -35,14 +35,17 @@ toggleElement.onclick = function () {
 
 //Highlighting
 const items = document.querySelectorAll("#menu > ul.items > li > a");
-const highlightObjects = function () {
-    const mesh = this.getAttribute("data-mesh");
-    vctrApi.highlightMeshByName(mesh, "#ffe81c", 0.2, true);
-    if (annotationsMap.has(mesh)) {
-        vctrApi.expandAnnotationsById([annotationsMap.get(mesh)], true, true);
-    }
 
-    //close menu
+const highlightObjects = function () {
+    
+    let meshes = this.getAttribute("data-highlight");
+  
+    vctrApi.highlightMeshesByName(meshes, "#ffe81c", 0.3, true);
+
+    if (annotationsMap.has(meshes)) {
+      vctrApi.expandAnnotationsById([annotationsMap.get(meshes)], true, true);
+    }
+    
     toggleElement.classList.toggle('is-active')
     menuElement.classList.remove('open');
     menuElement.classList.add('closed');
@@ -51,18 +54,6 @@ const highlightObjects = function () {
 for (let i = 0; i < items.length; i++) {
     items[i].addEventListener('click', highlightObjects, false);
 }
-
-// async function fetchData(path) {
-//     return new Promise((resolve, reject) => {
-//         try {
-//             fetch(path)
-//                 .then(file => file.json()
-//                     .then(json => resolve(json)));
-//         } catch (e) {
-//             reject(e);
-//         }
-//     });
-// }
 
 async function run() {
     console.log("Example script running..");
@@ -88,7 +79,7 @@ async function run() {
 
         try {
             console.log(await vctrApi.getObjects());
-            addAnnotation("Grape Stage", "grape_stage");
+            addAnnotation("Grape Stage", "grape_stage_1");
             addAnnotation("Orange stage", "orange_stage");
             addAnnotation("Orange zóna", "orange_zona");
             addAnnotation("Úschovňa", "uschovna");
