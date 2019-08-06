@@ -36,6 +36,7 @@ html, body {
   margin:0;
   padding:0;
   height: 100%;
+  overflow: hidden;
 }
 
 body {  
@@ -92,12 +93,30 @@ h3 {
   }
   
   #menu {
-    display:none;    
+    display:none; 
+    
     &.open {
       display:block !important;
     }
     &.closed {
       display:none !important;
+    }
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar-track {        
+        border-radius: 10px;
+        background-color: transparent;
+    }
+    
+    &::-webkit-scrollbar {
+        width: 7px;
+        background-color: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;        
+        background-color: #4f4f4f;
     }
 
     background-color: rgba(255, 255, 255, 1);    
@@ -106,7 +125,6 @@ h3 {
     right:0;    
     height: 100%;
     max-width:475px;        
-    overflow: scroll;
 
     ul {
       margin:0;
@@ -193,9 +211,22 @@ h3 {
 }
 .hamburger-inner, 
 .hamburger-inner::before, 
-.hamburger-inner::after {
-  width:30px;
-  background-color: #4f4f4f;
+.hamburger-inner::after {  
+  background-color: transparent;
+}
+
+.hamburger.is-active .hamburger-inner .text { 
+  visibility: hidden; 
+  opacity: 0;
+  transition: visibility 0s, opacity 0s;
+}
+
+.hamburger .hamburger-inner .text { 
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.2s 0.2s linear;
+  text-align:right;
+  margin-left:-30px;
 }
 
 .hamburger.is-active .hamburger-inner, 
@@ -203,3 +234,4 @@ h3 {
 .hamburger.is-active .hamburger-inner::after {
   background-color: #4f4f4f;
 }
+
