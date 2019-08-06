@@ -89,7 +89,28 @@ const items2 = [
   { "name": "Red bull organics", "enName": "Red bull organics", "data": "edbull_organic_3" }
 ];
 
+const items3 = [
+  { "name": "Nabíjačkareň", "enName": "Charge station", "id": "nabijackaren" },
+  { "name": "Cigarety", "enName": "Cigarettes", "id": "cigarety" },
+  { "name": "Káva", "enName": "Coffee", "id": "kava" },
+  { "name": "Red Bull", "enName": "Red Bull", "id": "redbull" },
+  { "name": "Bankomat", "enName": "ATM", "id": "bankomat" },
+  { "name": "Vináreň", "enName": "Wine bar", "id": "vinaren" },
+  { "name": "Víno", "enName": "Wine", "id": "vino" },
+  { "name": "Pivo", "enName": "Beer", "id": "pivo" },
+  { "name": "Bar", "enName": "Bar", "id": "bar" },
+  { "name": "Keramické WC", "enName": "Ceramic WC", "id": "keramickewc" },
+  { "name": "Sprchy", "enName": "Showers", "id": "sprcha" },
+  { "name": "WC", "enName": "WC", "id": "wc" },
+  { "name": "Voda", "enName": "Water", "id": "voda" },
+];
+
 if (getQueryVariable("lang") === "en") {
+  const search = document.createElement("span");
+  search.className = "text";
+  search.append("Search");
+  document.getElementsByClassName("hamburger-inner")[0].appendChild(search);
+
   items1.forEach(item => {
     createItem("items1", item.data, item.enName);
   });
@@ -97,13 +118,26 @@ if (getQueryVariable("lang") === "en") {
   items2.forEach(item => {
     createItem("items2", item.data, item.enName);
   });
+
+  items3.forEach(item => {
+    document.getElementById(item.id).append(item.enName);
+  });
 } else {
+  const search = document.createElement("span");
+  search.className = "text";
+  search.append("Hľadaj");
+  document.getElementsByClassName("hamburger-inner")[0].appendChild(search);
+
   items1.forEach(item => {
     createItem("items1", item.data, item.name);
   });
 
   items2.forEach(item => {
     createItem("items2", item.data, item.name);
+  });
+
+  items3.forEach(item => {
+    document.getElementById(item.id).append(item.name);
   });
 }
 
