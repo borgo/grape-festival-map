@@ -89,10 +89,10 @@ async function run() {
             addAnnotation("Camp manager", "camp_manager");
             addAnnotation("Corny šport", "futbalka_3");
             addAnnotation("Grape pavilon", "grape_pavilon");
-            addAnnotation("Frisco sunset", "pomaranc_3"); //@TODO
+            addAnnotation("Frisco sunset", "pomaranc_3");
             addAnnotation("Nivea / Rowenta", "ruz_3");
-            addAnnotation("Birell", "trampolina_3");  //@TODO
-            addAnnotation("Požičovňa", "pozicovna"); //@TODO
+            addAnnotation("Birell", "trampolina_3");
+            addAnnotation("Požičovňa", "pozicovna");
             addAnnotation("Good point", "stolicka_3");
             addAnnotation("Orange zóna", "orange_zona");
             addAnnotation("Pilsner Urquell", "pilsner");
@@ -100,11 +100,11 @@ async function run() {
             addAnnotation("Tržnica", "trznica#10");
             addAnnotation("Gastro", "gastro");
             addAnnotation("Jameson", "jameson_2");
-            addAnnotation("Gambrinus truck", "gambrinus"); //@TODO
-            addAnnotation("Shop", "merch");
-            addAnnotation("Royal crown zóna", "royal_crown_zona"); //@TODO
+            addAnnotation("Gambrinus truck", "gambrinus_bus_2");
+            addAnnotation("Shop", "shop");
+            addAnnotation("Royal crown zóna", "royal_crown_zona_1");
             addAnnotation("Mastercard", "master_card");
-            addAnnotation("Avon", "avon"); //@TODO
+            addAnnotation("Avon", "avon");
             addAnnotation("Urban market", "urban_market_1");
             addAnnotation("Red bull organics", "redbull_organic_3");
             addAnnotation("Grape Stage", "grape_stage_1");
@@ -113,7 +113,7 @@ async function run() {
             addAnnotation("365.Bank stage", "365_stage");
             addAnnotation("Nay stage", "nay_stage");
             addAnnotation("Rádio_FM Urban market hangair", "radio_fm_urban_market_hangair");
-            addAnnotation("Redbull rapstorm stage", "redbull_rapstorm"); //@TODO
+            addAnnotation("Redbull rapstorm stage", "red_bull_rapstorm_stage_4");
             addAnnotation("Očistec stage", "ocistec_stage");
             addAnnotation("Hlavný vstup", "main_entry_2");
             addAnnotation("Vstup stanové mesto", "entry_tent_city");
