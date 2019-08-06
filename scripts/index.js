@@ -23,8 +23,7 @@ toggleElement.onclick = function () {
     }
 }
 
-function getQueryVariable(variable)
-{
+function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
     for (var i=0;i<vars.length;i++) {
@@ -66,8 +65,7 @@ async function run() {
         console.log("API error", err);
     }
 
-    function addAnnotation(name, enName, objectName) {        
-
+    function addAnnotation(name, enName, objectName) {
         if (getQueryVariable("lang") === "en") { 
           name = enName;
         }
