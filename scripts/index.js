@@ -65,7 +65,10 @@ async function run() {
         console.log("API error", err);
     }
 
-    function addAnnotation(name, objectName) {
+    function addAnnotation(name, enName, objectName) {
+        if (window.location.pathname.includes("/en/")) { 
+          name = enName;
+        }
         vctrApi.addAnnotation({
             name: name,
             objectName: objectName
@@ -81,48 +84,48 @@ async function run() {
         console.log("API ready..");
 
         try {
-            console.log(await vctrApi.getObjects());
-            addAnnotation("Úschovňa / Straty a nálezy", "uschovna");
-            addAnnotation("Mazagrande", "mazagrande");
-            addAnnotation("Kaufland zóna", "kaufland_zona");
-            addAnnotation("365.Bank cafe", "365bank_cafe");
-            addAnnotation("Camp manager", "camp_manager");
-            addAnnotation("Corny šport", "futbalka_3");
-            addAnnotation("Grape pavilon", "grape_pavilon");
-            addAnnotation("Frisco sunset", "pomaranc_3");
-            addAnnotation("Nivea / Rowenta", "ruz_3");
-            addAnnotation("Birell", "trampolina_3");
-            addAnnotation("Požičovňa", "pozicovna");
-            addAnnotation("Good point", "stolicka_3");
-            addAnnotation("Orange zóna", "orange_zona");
-            addAnnotation("Pilsner Urquell", "pilsner");
-            addAnnotation("SSE zóna", "sse_zona");
-            addAnnotation("Tržnica", "trznica#10");
-            addAnnotation("Gastro", "gastro");
-            addAnnotation("Jameson", "jameson_2");
-            addAnnotation("Gambrinus truck", "gambrinus_bus_2");
-            addAnnotation("Shop", "shop");
-            addAnnotation("Royal crown zóna", "royal_crown_zona_1");
-            addAnnotation("Mastercard", "master_card");
-            addAnnotation("Avon", "avon");
-            addAnnotation("Urban market", "urban_market_1");
-            addAnnotation("Red bull organics", "redbull_organic_3");
-            addAnnotation("Grape Stage", "grape_stage_1");
-            addAnnotation("Orange stage", "orange_stage");
-            addAnnotation("Suzuki stage", "suzuki_stage");
-            addAnnotation("365.Bank stage", "365_stage");
-            addAnnotation("Nay stage", "nay_stage");
-            addAnnotation("Rádio_FM Urban market hangair", "radio_fm_urban_market_hangair");
-            addAnnotation("Redbull rapstorm stage", "red_bull_rapstorm_stage_4");
-            addAnnotation("Očistec stage", "ocistec_stage");
-            addAnnotation("Hlavný vstup", "main_entry_2");
-            addAnnotation("Vstup stanové mesto", "entry_tent_city");
-            addAnnotation("Biela noc \"Perspektíva\"", "biela_noc_perspektiva");            
-            addAnnotation("Chill village", "chill_village");
-            addAnnotation("Tent Inn", "tent_inn");
-            addAnnotation("U rampa", "u_rampa");            
-            addAnnotation("Stanové mestečko", "tents");
-            addAnnotation("Prvá pomoc", "doctor_3");
+          console.log(await vctrApi.getObjects());
+          addAnnotation("Úschovňa / Straty a nálezy", "Depository / Lost and found", "uschovna");
+          addAnnotation("Mazagrande", "Mazagrande", "mazagrande");
+          addAnnotation("Kaufland zóna", "Kaufland zone", "kaufland_zona");
+          addAnnotation("365.Bank cafe", "365.Bank cafe", "365bank_cafe");
+          addAnnotation("Camp manager", "Camp manager", "camp_manager");
+          addAnnotation("Corny šport", "Corny sport", "futbalka_3");
+          addAnnotation("Grape pavilon", "Grape pavilon", "grape_pavilon");
+          addAnnotation("Frisco sunset", "Frisco sunset", "pomaranc_3");
+          addAnnotation("Nivea / Rowenta", "Nivea / Rowenta", "ruz_3");
+          addAnnotation("Birell", "Birell", "trampolina_3");
+          addAnnotation("Požičovňa", "Rental", "pozicovna");
+          addAnnotation("Good point", "Good point", "stolicka_3");
+          addAnnotation("Orange zóna", "Orange zone", "orange_zona_2");
+          addAnnotation("Pilsner Urquell", "Pilsner Urquell", "pilsner");
+          addAnnotation("SSE zóna", "SSE zone", "sse_zona");
+          addAnnotation("Tržnica", "Market", "trznica#10");
+          addAnnotation("Gastro", "Gastro", "gastro");
+          addAnnotation("Jameson", "Jameson", "jameson_2");
+          addAnnotation("Gambrinus truck", "Gambrinus truck", "gambrinus_bus_2");
+          addAnnotation("Shop", "Shop", "shop");
+          addAnnotation("Royal crown zóna", "Royal crown zone", "royal_crown_zona_1");
+          addAnnotation("Mastercard", "Mastercard", "master_card");
+          addAnnotation("Avon", "Avon", "avon");
+          addAnnotation("Urban market", "Urban market", "urban_market_1");
+          addAnnotation("Red bull organics", "Red bull organics", "redbull_organic_3");
+          addAnnotation("Grape Stage", "Grape Stage", "grape_stage_1");
+          addAnnotation("Orange stage", "Orange stage", "orange_stage");
+          addAnnotation("Suzuki stage", "Suzuki stage", "suzuki_stage");
+          addAnnotation("365.Bank stage", "365.Bank stage", "365_stage");
+          addAnnotation("Nay stage", "Nay stage", "nay_stage");
+          addAnnotation("Rádio_FM Urban market hangair", "Rádio_FM Urban market hangair", "radio_fm_urban_market_hangair");
+          addAnnotation("Redbull rapstorm stage", "Redbull rapstorm stage", "red_bull_rapstorm_stage_4");
+          addAnnotation("Očistec stage", "Purgatory stage", "ocistec_stage");
+          addAnnotation("Hlavný vstup", "Main entrance", "main_entry_2");
+          addAnnotation("Vstup stanové mesto", "Entrance for tent city", "entry_tent_city");
+          addAnnotation("Biela noc \"Perspektíva\"", "White night \"Perspective\"", "biela_noc_perspektiva_1");
+          addAnnotation("Chill village", "Chill village", "chill_village");
+          addAnnotation("Tent Inn", "Tent Inn", "tent_inn");
+          addAnnotation("U rampa", "U ramp", "u_rampa");
+          addAnnotation("Stanové mestečko", "Tents", "tents");
+          addAnnotation("Prvá pomoc", "First aid", "doctor_1");
             await vctrApi.enableAnnotations(true);
 
         } catch (e) {
