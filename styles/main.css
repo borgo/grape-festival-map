@@ -50,7 +50,7 @@ h3 {
 #app #menu-toggle {
   position: fixed;
   right: 8px;
-  bottom: 10px;
+  bottom: 20px;
   padding: 0px;
   z-index: 12;
 }
@@ -80,7 +80,7 @@ h3 {
   position: absolute;
   z-index: 10;
   right: 0;
-  height: 100%;
+  height: calc(100% - 75px);
   max-width: 475px;
 }
 
