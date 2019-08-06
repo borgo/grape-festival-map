@@ -33,6 +33,80 @@ function getQueryVariable(variable) {
     return(false);
 }
 
+//Creating items
+const createItem = (elementId, dataHighlight, name) => {
+  const items = document.getElementById(elementId);
+  let newItem = document.createElement("li");
+  let link = document.createElement("a");
+  link.href = "#";
+  link.setAttribute("data-highlight", dataHighlight);
+  link.append(name);
+  newItem.appendChild(link);
+  items.appendChild(newItem);
+}
+
+
+
+const items1 = [
+  { "name": "Grape Stage", "enName": "Grape Stage", "data": "grape_stage,grape_stage_1" },
+  { "name": "Orange stage", "enName": "Orange Stage", "data": "orange_stage,orange_stage_2" },
+  { "name": "Suzuki stage", "enName": "Suzuki Stage", "data": "suzuki_stage,suzuki_stage_2" },
+  { "name": "365.Bank stage", "enName": "365.Bank Stage", "data": "365_stage,365_stage_1,365_stage_2" },
+  { "name": "Nay stage", "enName": "Nay Stage", "data": "nay_stage" },
+  { "name": "Rádio_FM Urban market hangair", "enName": "Rádio_FM Urban market hangair", "data": "radio_fm_urban_market_hangair" },
+  { "name": "Redbull rapstorm stage", "enName": "Redbull rapstorm stage", "data": "red_bull_rapstorm_stage_1,red_bull_rapstorm_stage_2,red_bull_rapstorm_stage_3,red_bull_rapstorm_stage_4,red_bull_rapstorm_stage_5" },
+  { "name": "Očistec stage", "enName": "Očistec stage", "data": "ocistec_stage" },
+  { "name": "Hlavný vstup", "enName": "Main entrance", "data": "main_entry_2,main_entry_3" },
+  { "name": "Vstup stanové mesto", "enName": "Entrance for tent city", "data": "entry_tent_city" },
+  { "name": "Biela noc \"Perspektíva\"", "enName": "Biela noc \"Perspektíva\"", "data": "biela_noc_perspektiva_1,biela_noc_perspektiva_2" },
+];
+
+const items2 = [
+  { "name": "Úschovňa / Straty a nálezy", "enName": "Depository / Lost and found", "data": "uschovna" },
+  { "name": "Mazagrande", "enName": "Mazagrande", "data": "mazagrande" },
+  { "name": "Kaufland zóna", "enName": "Kaufland zone", "data": "kaufland_zona,kaufland_zona_1,kaufland_zona_2,kaufland_zona_3" },
+  { "name": "365.Bank cafe", "enName": "365.Bank cafe", "data": "365bank_cafe" },
+  { "name": "Camp manager", "enName": "Camp manager", "data": "camp_manager" },
+  { "name": "Corny šport", "enName": "orny sport", "data": "futbalka_3" },
+  { "name": "Grape pavilon", "enName": "Grape pavilon", "data": "grape_pavilon,grape_pavilon_1" },
+  { "name": "Frisco sunset", "enName": "Frisco sunset", "data": "pomaranc_3" },
+  { "name": "Nivea / Rowenta", "enName": "Nivea / Rowenta", "data": "ruz_3" },
+  { "name": "Birell", "enName": "Birell", "data": "trampolina_3" },
+  { "name": "Požičovňa", "enName": "Rental", "data": "pozicovna" },
+  { "name": "Good point", "enName": "Good point", "data": "stolicka_3" },
+  { "name": "Orange zóna", "enName": "Orange zone", "data": "orange_zona_2,orange_zona_3,orange_zona_4,orange_zona_5" },
+  { "name": "Pilsner Urquell", "enName": "Pilsner Urquell", "data": "pilsner" },
+  { "name": "SSE zóna", "enName": "SSE zone", "data": "sse_zona" },
+  { "name": "Tržnica", "enName": "Market", "data": "trznica#10" },
+  { "name": "Gastro", "enName": "Gastro", "data": "gastro" },
+  { "name": "Jameson", "enName": "Jameson", "data": "jameson_2,jameson_3" },
+  { "name": "Gambrinus truck", "enName": "Gambrinus truck", "data": "ambrinus_bus_1,gambrinus_bus_2,gambrinus_bus_3,gambrinus_bus_4" },
+  { "name": "Shop", "enName": "Shop", "data": "shop" },
+  { "name": "Royal crown zóna", "enName": "Royal crown zóna", "data": "oyal_crown_zona_1,royal_crown_zona_2" },
+  { "name": "Mastercard", "enName": "Mastercard", "data": "master_card,master_card_1,master_card_2,master_card_3" },
+  { "name": "Avon", "enName": "Avon", "data": "avon" },
+  { "name": "Urban market", "enName": "Urban market", "data": "urban_market_1,skeleton_urban_market" },
+  { "name": "Red bull organics", "enName": "Red bull organics", "data": "edbull_organic_3" }
+];
+
+if (getQueryVariable("lang") === "en") {
+  items1.forEach(item => {
+    createItem("items1", item.data, item.enName);
+  });
+
+  items2.forEach(item => {
+    createItem("items2", item.data, item.enName);
+  });
+} else {
+  items1.forEach(item => {
+    createItem("items1", item.data, item.name);
+  });
+
+  items2.forEach(item => {
+    createItem("items2", item.data, item.name);
+  });
+}
+
 //Highlighting
 const items = document.querySelectorAll("#menu > .inner > ul.items > li > a");
 
