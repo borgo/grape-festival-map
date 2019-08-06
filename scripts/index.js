@@ -34,7 +34,7 @@ toggleElement.onclick = function () {
 }
 
 //Highlighting
-const items = document.querySelectorAll("#menu > ul.items > li > a");
+const items = document.querySelectorAll("#menu > .inner > ul.items > li > a");
 
 const highlightObjects = function () {
     
