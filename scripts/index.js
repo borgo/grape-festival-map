@@ -234,6 +234,8 @@ async function run() {
           addAnnotation("U rampa", "U ramp", "u_rampa");
           addAnnotation("Stanové mestečko", "Tents", "tents");
           addAnnotation("Prvá pomoc", "First aid", "doctor_1");
+          addAnnotation("Parking", "Parking", "parking");
+          addAnnotation("Taxi", "Taxi", "taxi");
             await vctrApi.enableAnnotations(true);
 
         } catch (e) {
