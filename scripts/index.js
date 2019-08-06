@@ -90,14 +90,14 @@ async function run() {
           addAnnotation("Kaufland zóna", "Kaufland zone", "kaufland_zona");
           addAnnotation("365.Bank cafe", "365.Bank cafe", "365bank_cafe");
           addAnnotation("Camp manager", "Camp manager", "camp_manager");
-          addAnnotation("Corny šport", "Corny šport", "futbalka_3");
+          addAnnotation("Corny šport", "Corny sport", "futbalka_3");
           addAnnotation("Grape pavilon", "Grape pavilon", "grape_pavilon");
           addAnnotation("Frisco sunset", "Frisco sunset", "pomaranc_3");
           addAnnotation("Nivea / Rowenta", "Nivea / Rowenta", "ruz_3");
           addAnnotation("Birell", "Birell", "trampolina_3");
           addAnnotation("Požičovňa", "Rental", "pozicovna");
           addAnnotation("Good point", "Good point", "stolicka_3");
-          addAnnotation("Orange zóna", "Orange zone", "orange_zona");
+          addAnnotation("Orange zóna", "Orange zone", "orange_zona_2");
           addAnnotation("Pilsner Urquell", "Pilsner Urquell", "pilsner");
           addAnnotation("SSE zóna", "SSE zone", "sse_zona");
           addAnnotation("Tržnica", "Market", "trznica#10");
@@ -117,15 +117,15 @@ async function run() {
           addAnnotation("Nay stage", "Nay stage", "nay_stage");
           addAnnotation("Rádio_FM Urban market hangair", "Rádio_FM Urban market hangair", "radio_fm_urban_market_hangair");
           addAnnotation("Redbull rapstorm stage", "Redbull rapstorm stage", "red_bull_rapstorm_stage_4");
-          addAnnotation("Očistec stage", "Očistec stage", "ocistec_stage");
+          addAnnotation("Očistec stage", "Purgatory stage", "ocistec_stage");
           addAnnotation("Hlavný vstup", "Main entrance", "main_entry_2");
           addAnnotation("Vstup stanové mesto", "Entrance for tent city", "entry_tent_city");
-          addAnnotation("Biela noc \"Perspektíva\"", "Biela noc \"Perspektíva\"", "biela_noc_perspektiva");
+          addAnnotation("Biela noc \"Perspektíva\"", "White night \"Perspective\"", "biela_noc_perspektiva_1");
           addAnnotation("Chill village", "Chill village", "chill_village");
           addAnnotation("Tent Inn", "Tent Inn", "tent_inn");
-          addAnnotation("U rampa", "U rampa", "u_rampa");
+          addAnnotation("U rampa", "U ramp", "u_rampa");
           addAnnotation("Stanové mestečko", "Tents", "tents");
-          addAnnotation("Prvá pomoc", "First aid", "doctor_3");
+          addAnnotation("Prvá pomoc", "First aid", "doctor_1");
             await vctrApi.enableAnnotations(true);
 
         } catch (e) {
