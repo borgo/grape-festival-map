@@ -74,13 +74,11 @@ h3 {
 
 #app #menu {
   display: none;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   background-color: white;
   position: absolute;
   z-index: 10;
   right: 0;
-  height: calc(100% - 75px);
+  height: 100%;
   max-width: 475px;
 }
 
@@ -92,17 +90,23 @@ h3 {
   display: none !important;
 }
 
-#app #menu::-webkit-scrollbar-track {
+#app #menu .inner {
+  height: calc(100% - 75px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#app #menu .inner::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: transparent;
 }
 
-#app #menu::-webkit-scrollbar {
+#app #menu .inner::-webkit-scrollbar {
   width: 7px;
   background-color: transparent;
 }
 
-#app #menu::-webkit-scrollbar-thumb {
+#app #menu .inner::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #4f4f4f;
 }

@@ -101,29 +101,31 @@ h3 {
     &.closed {
       display:none !important;
     }
-
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    &::-webkit-scrollbar-track {        
-        border-radius: 10px;
-        background-color: transparent;
-    }
-    
-    &::-webkit-scrollbar {
-        width: 7px;
-        background-color: transparent;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-        border-radius: 10px;        
-        background-color: #4f4f4f;
+    .inner {
+        height:calc(100% - 75px);        
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar-track {        
+            border-radius: 10px;
+            background-color: transparent;
+        }
+        
+        &::-webkit-scrollbar {
+            width: 7px;
+            background-color: transparent;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;        
+            background-color: #4f4f4f;
+        }
     }
 
     background-color: rgba(255, 255, 255, 1);    
     position: absolute;
     z-index:10;
     right:0;    
-    height: calc(100% - 75px);
+    height:100%;
     max-width:475px;        
 
     ul {
