@@ -1,4 +1,3 @@
-// Media queries
 @mixin for-phone-only {
   @media (max-width: 599px) { @content; }
 }
@@ -37,6 +36,7 @@ html, body {
   margin:0;
   padding:0;
   height: 100%;
+  overflow: hidden;
 }
 
 body {  
@@ -71,7 +71,7 @@ h3 {
   #menu-toggle {
     position:fixed;
     right:8px;
-    bottom:10px;
+    bottom:20px;
     padding:0px;
     z-index: 12;
     &:focus {
@@ -88,104 +88,112 @@ h3 {
       position:absolute;
       left:7px;
       bottom:10px;
-      z-index: 10;
+      z-index: 10;      
     }
   }
   
   #menu {
-    display:none;
-    //margin: 15px;
+    display:none; 
+    
     &.open {
       display:block !important;
     }
     &.closed {
       display:none !important;
     }
+    .inner {
+        height:calc(100% - 75px);        
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar-track {        
+            border-radius: 10px;
+            background-color: transparent;
+        }
+        
+        &::-webkit-scrollbar {
+            width: 7px;
+            background-color: transparent;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;        
+            background-color: #4f4f4f;
+        }
+    }
 
-    background-color: rgba(255, 255, 255, 1);
-    //background-color: $pink;
+    background-color: rgba(255, 255, 255, 1);    
     position: absolute;
     z-index:10;
-    right:0;
-    //top:100px;
-    width:90%;
-    height: 100%;
-    max-width:400px;    
-    //max-height: 1200px;
-    overflow: scroll;    
+    right:0;    
+    height:100%;
+    max-width:475px;        
+
     ul {
       margin:0;
       padding: 20px;
-      
-      // @include for-tablet-portrait-up {
-      //   padding: 20px;
-      // }
-
       @include clearfix;
 
       li {
         list-style:none;        
-        padding: 0 0 10px 0;        
-        margin-bottom: 0;
+        padding: 0;
+        margin: 0 0 10px 0;
         float:left;
         width:50%;
-        a {
-          //color: $white;
-        }
       }
 
-      &.icons {
-        //padding: 30px 10px 10px 10px;
-
-        li {          
-          padding: 0 0 10px 0;
+      &.icons {        
+        padding:0 10px 10px 10px;
+        li {
           text-align: center;
           width:33%;
-          .icon {
-            //background-image: url("../files/icon.svg");
-            //background-repeat: no-repeat;
-            //background-position: 50% 0;
-            display: block;
-            width: 100%;
-            height:80px;
-            &.nabijackaren {
-              //background-image: url("../files/nabijackaren.svg");
+          margin:0;
+          .icon {            
+            height:70px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            img {
+              justify-content: center;
+              align-self: flex-end;              
             }
-            &.cigarety {
-              //background-image: url("../files/cigarety.svg");
+            &.nabijackaren img {
+              height:40px;
             }
-            &.kava {
-              //background-image: url("../files/kava.svg");
+            &.cigarety img {
+              height:55px;
             }
-            &.redbull {
-              //background-image: url("../files/redbull.svg");
+            &.kava img {
+              height:30px;
             }
-            &.bankomat {
-              //background-image: url("../files/bankomat.svg");
+            &.redbull img {
+              height:40px;
             }
-            &.vinaren {
-              //background-image: url("../files/vinaren.svg");
+            &.bankomat img {
+              height:30px;
             }
-            &.vino {
-              //background-image: url("../files/vino.svg");
+            &.vinaren img {
+              height:40px;
             }
-            &.pivo {
-              //background-image: url("../files/pivo.svg");
+            &.vino img {
+              height:60px;
             }
-            &.bar {
-              //background-image: url("../files/bar.svg");
+            &.pivo img {              
+              height:50px;
             }
-            &.keramickewc {
-              //background-image: url("../files/keramickewc.svg");
+            &.bar img {
+              height:40px;
             }
-            &.sprcha {
-              //background-image: url("../files/sprcha.svg");
+            &.keramickewc img {
+              height:40px;
             }
-            &.wc {
-              //background-image: url("../files/wc.svg");
+            &.sprcha img {
+              height:50px;
             }
-            &.voda {
-              //background-image: url("../files/voda.svg");
+            &.wc img {
+              height:30px;
+            }
+            &.voda img {
+              height:30px;
             }
                         
           }
@@ -199,16 +207,28 @@ h3 {
 
 }
 
-// Hamburger menu https://github.com/jonsuh/hamburgers#sass
 @import "./_sass/hamburgers/hamburgers";
 .hamburger-box {
   width: 30px;
 }
 .hamburger-inner, 
 .hamburger-inner::before, 
-.hamburger-inner::after {
-  width:30px;
-  background-color: #4f4f4f;
+.hamburger-inner::after {  
+  background-color: transparent;
+}
+
+.hamburger.is-active .hamburger-inner .text { 
+  visibility: hidden; 
+  opacity: 0;
+  transition: visibility 0s, opacity 0s;
+}
+
+.hamburger .hamburger-inner .text { 
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.2s 0.2s linear;
+  text-align:right;
+  margin-left:-30px;
 }
 
 .hamburger.is-active .hamburger-inner, 
@@ -216,3 +236,4 @@ h3 {
 .hamburger.is-active .hamburger-inner::after {
   background-color: #4f4f4f;
 }
+
